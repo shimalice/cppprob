@@ -4,9 +4,8 @@ using namespace std;
 
 class bookshelf{
 protected:
-  string top, middle, bottom;
+  string top, middle, bottom, null;
 public:
-  string *x;
   bookshelf();
   string& getShelf(string destination);
   void showShelves();
@@ -20,13 +19,14 @@ bookshelf::bookshelf(){
 
 string& bookshelf::getShelf(string destination){
   if (destination == "すぐ読む") {
-    x = &top;
+    return top;
   } else if (destination == "あとで読む") {
-    x = &middle;
+    return middle;
   } else if (destination == "積ん読") {
-    x = &bottom;
+    return bottom;
+  } else {
+    return null;
   }
-  return *x;
 }
 
 void bookshelf::showShelves(){

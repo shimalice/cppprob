@@ -34,8 +34,6 @@ public:
   trainTicket(): transTicket(){};
 };
 
-
-
 int main()
 {
   int ticketNum;
